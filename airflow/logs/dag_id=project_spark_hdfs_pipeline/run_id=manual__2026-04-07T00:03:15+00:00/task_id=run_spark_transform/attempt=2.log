@@ -1,0 +1,98 @@
+[2026-04-07T00:10:20.040+0000] {local_task_job_runner.py:120} INFO - ::group::Pre task execution logs
+[2026-04-07T00:10:20.064+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: project_spark_hdfs_pipeline.run_spark_transform manual__2026-04-07T00:03:15+00:00 [queued]>
+[2026-04-07T00:10:20.069+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: project_spark_hdfs_pipeline.run_spark_transform manual__2026-04-07T00:03:15+00:00 [queued]>
+[2026-04-07T00:10:20.070+0000] {taskinstance.py:2306} INFO - Starting attempt 2 of 1
+[2026-04-07T00:10:20.086+0000] {taskinstance.py:2330} INFO - Executing <Task(BashOperator): run_spark_transform> on 2026-04-07 00:03:15+00:00
+[2026-04-07T00:10:20.091+0000] {standard_task_runner.py:63} INFO - Started process 75 to run task
+[2026-04-07T00:10:20.093+0000] {standard_task_runner.py:90} INFO - Running: ['airflow', 'tasks', 'run', 'project_spark_hdfs_pipeline', 'run_spark_transform', 'manual__2026-04-07T00:03:15+00:00', '--job-id', '10', '--raw', '--subdir', 'DAGS_FOLDER/project_spark_hdfs_pipeline.py', '--cfg-path', '/tmp/tmpcwb2kt7z']
+[2026-04-07T00:10:20.094+0000] {standard_task_runner.py:91} INFO - Job 10: Subtask run_spark_transform
+[2026-04-07T00:10:20.126+0000] {task_command.py:426} INFO - Running <TaskInstance: project_spark_hdfs_pipeline.run_spark_transform manual__2026-04-07T00:03:15+00:00 [running]> on host 5b034116cd08
+[2026-04-07T00:10:20.208+0000] {taskinstance.py:2648} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='airflow' AIRFLOW_CTX_DAG_ID='project_spark_hdfs_pipeline' AIRFLOW_CTX_TASK_ID='run_spark_transform' AIRFLOW_CTX_EXECUTION_DATE='2026-04-07T00:03:15+00:00' AIRFLOW_CTX_TRY_NUMBER='2' AIRFLOW_CTX_DAG_RUN_ID='manual__2026-04-07T00:03:15+00:00'
+[2026-04-07T00:10:20.209+0000] {taskinstance.py:430} INFO - ::endgroup::
+[2026-04-07T00:10:20.231+0000] {subprocess.py:63} INFO - Tmp dir root location: /tmp
+[2026-04-07T00:10:20.232+0000] {subprocess.py:75} INFO - Running command: ['/usr/bin/bash', '-c', "/bin/bash -lc '/opt/project/scripts/run-hdfs-etl.sh all'"]
+[2026-04-07T00:10:20.239+0000] {subprocess.py:86} INFO - Output:
+[2026-04-07T00:10:21.781+0000] {subprocess.py:93} INFO - [info] welcome to sbt 1.9.8 (Debian Java 17.0.18)
+[2026-04-07T00:10:22.619+0000] {subprocess.py:93} INFO - [info] loading settings for project project-build from plugins.sbt ...
+[2026-04-07T00:10:23.300+0000] {subprocess.py:93} INFO - [info] loading project definition from /opt/project/project
+[2026-04-07T00:10:25.009+0000] {subprocess.py:93} INFO - [info] loading settings for project root from build.sbt ...
+[2026-04-07T00:10:25.146+0000] {subprocess.py:93} INFO - [info] set current project to project-spark-scala-etl (in build file:/opt/project/)
+[2026-04-07T00:10:29.156+0000] {subprocess.py:93} INFO - [info] Assembly jar up to date: /opt/project/target/scala-2.12/project-spark-scala-etl-assembly-0.1.0-SNAPSHOT.jar
+[2026-04-07T00:10:29.216+0000] {subprocess.py:93} INFO - [success] Total time: 4 s, completed Apr 7, 2026, 12:10:29 AM
+[2026-04-07T00:10:30.158+0000] {subprocess.py:93} INFO -  Container project-spark-postgres Running
+[2026-04-07T00:10:30.158+0000] {subprocess.py:93} INFO -  Container project-spark-namenode Running
+[2026-04-07T00:10:30.158+0000] {subprocess.py:93} INFO -  Container project-spark-datanode Running
+[2026-04-07T00:10:30.159+0000] {subprocess.py:93} INFO -  Container project-spark-namenode Waiting
+[2026-04-07T00:10:30.667+0000] {subprocess.py:93} INFO -  Container project-spark-namenode Healthy
+[2026-04-07T00:10:30.674+0000] {subprocess.py:93} INFO -  Container project-spark-postgres Waiting
+[2026-04-07T00:10:30.675+0000] {subprocess.py:93} INFO -  Container project-spark-namenode Waiting
+[2026-04-07T00:10:31.176+0000] {subprocess.py:93} INFO -  Container project-spark-namenode Healthy
+[2026-04-07T00:10:31.176+0000] {subprocess.py:93} INFO -  Container project-spark-postgres Healthy
+[2026-04-07T00:10:31.176+0000] {subprocess.py:93} INFO -  Container project-spark-scala-etl-master-spark-submit-run-5736e6dafcb7 Creating
+[2026-04-07T00:10:31.400+0000] {subprocess.py:93} INFO -  Container project-spark-scala-etl-master-spark-submit-run-5736e6dafcb7 Created
+[2026-04-07T00:10:33.601+0000] {subprocess.py:93} INFO - 26/04/07 00:10:33 INFO SparkContext: Running Spark version 3.5.1
+[2026-04-07T00:10:33.603+0000] {subprocess.py:93} INFO - 26/04/07 00:10:33 INFO SparkContext: OS info Linux, 6.17.0-20-generic, amd64
+[2026-04-07T00:10:33.604+0000] {subprocess.py:93} INFO - 26/04/07 00:10:33 INFO SparkContext: Java version 17.0.12
+[2026-04-07T00:10:33.678+0000] {subprocess.py:93} INFO - 26/04/07 00:10:33 WARN NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+[2026-04-07T00:10:33.759+0000] {subprocess.py:93} INFO - 26/04/07 00:10:33 INFO ResourceUtils: ==============================================================
+[2026-04-07T00:10:33.759+0000] {subprocess.py:93} INFO - 26/04/07 00:10:33 INFO ResourceUtils: No custom resources configured for spark.driver.
+[2026-04-07T00:10:33.760+0000] {subprocess.py:93} INFO - 26/04/07 00:10:33 INFO ResourceUtils: ==============================================================
+[2026-04-07T00:10:33.760+0000] {subprocess.py:93} INFO - 26/04/07 00:10:33 INFO SparkContext: Submitted application: project-spark-scala-etl
+[2026-04-07T00:10:33.779+0000] {subprocess.py:93} INFO - 26/04/07 00:10:33 INFO ResourceProfile: Default ResourceProfile created, executor resources: Map(cores -> name: cores, amount: 1, script: , vendor: , memory -> name: memory, amount: 1024, script: , vendor: , offHeap -> name: offHeap, amount: 0, script: , vendor: ), task resources: Map(cpus -> name: cpus, amount: 1.0)
+[2026-04-07T00:10:33.785+0000] {subprocess.py:93} INFO - 26/04/07 00:10:33 INFO ResourceProfile: Limiting resource is cpu
+[2026-04-07T00:10:33.786+0000] {subprocess.py:93} INFO - 26/04/07 00:10:33 INFO ResourceProfileManager: Added ResourceProfile id: 0
+[2026-04-07T00:10:33.843+0000] {subprocess.py:93} INFO - 26/04/07 00:10:33 INFO SecurityManager: Changing view acls to: spark
+[2026-04-07T00:10:33.843+0000] {subprocess.py:93} INFO - 26/04/07 00:10:33 INFO SecurityManager: Changing modify acls to: spark
+[2026-04-07T00:10:33.844+0000] {subprocess.py:93} INFO - 26/04/07 00:10:33 INFO SecurityManager: Changing view acls groups to:
+[2026-04-07T00:10:33.844+0000] {subprocess.py:93} INFO - 26/04/07 00:10:33 INFO SecurityManager: Changing modify acls groups to:
+[2026-04-07T00:10:33.844+0000] {subprocess.py:93} INFO - 26/04/07 00:10:33 INFO SecurityManager: SecurityManager: authentication disabled; ui acls disabled; users with view permissions: spark; groups with view permissions: EMPTY; users with modify permissions: spark; groups with modify permissions: EMPTY
+[2026-04-07T00:10:34.053+0000] {subprocess.py:93} INFO - 26/04/07 00:10:34 INFO Utils: Successfully started service 'sparkDriver' on port 45825.
+[2026-04-07T00:10:34.087+0000] {subprocess.py:93} INFO - 26/04/07 00:10:34 INFO SparkEnv: Registering MapOutputTracker
+[2026-04-07T00:10:34.125+0000] {subprocess.py:93} INFO - 26/04/07 00:10:34 INFO SparkEnv: Registering BlockManagerMaster
+[2026-04-07T00:10:34.143+0000] {subprocess.py:93} INFO - 26/04/07 00:10:34 INFO BlockManagerMasterEndpoint: Using org.apache.spark.storage.DefaultTopologyMapper for getting topology information
+[2026-04-07T00:10:34.144+0000] {subprocess.py:93} INFO - 26/04/07 00:10:34 INFO BlockManagerMasterEndpoint: BlockManagerMasterEndpoint up
+[2026-04-07T00:10:34.147+0000] {subprocess.py:93} INFO - 26/04/07 00:10:34 INFO SparkEnv: Registering BlockManagerMasterHeartbeat
+[2026-04-07T00:10:34.170+0000] {subprocess.py:93} INFO - 26/04/07 00:10:34 INFO DiskBlockManager: Created local directory at /tmp/blockmgr-d9d8f073-31e3-4625-9aba-1274fc5819bc
+[2026-04-07T00:10:34.182+0000] {subprocess.py:93} INFO - 26/04/07 00:10:34 INFO MemoryStore: MemoryStore started with capacity 434.4 MiB
+[2026-04-07T00:10:34.195+0000] {subprocess.py:93} INFO - 26/04/07 00:10:34 INFO SparkEnv: Registering OutputCommitCoordinator
+[2026-04-07T00:10:34.346+0000] {subprocess.py:93} INFO - 26/04/07 00:10:34 INFO JettyUtils: Start Jetty 0.0.0.0:4040 for SparkUI
+[2026-04-07T00:10:34.418+0000] {subprocess.py:93} INFO - 26/04/07 00:10:34 INFO Utils: Successfully started service 'SparkUI' on port 4040.
+[2026-04-07T00:10:34.456+0000] {subprocess.py:93} INFO - 26/04/07 00:10:34 INFO SparkContext: Added JAR file:/opt/project/target/scala-2.12/project-spark-scala-etl-assembly-0.1.0-SNAPSHOT.jar at spark://328fccd2c30d:45825/jars/project-spark-scala-etl-assembly-0.1.0-SNAPSHOT.jar with timestamp 1775520633592
+[2026-04-07T00:10:34.509+0000] {subprocess.py:93} INFO - 26/04/07 00:10:34 INFO Executor: Starting executor ID driver on host 328fccd2c30d
+[2026-04-07T00:10:34.509+0000] {subprocess.py:93} INFO - 26/04/07 00:10:34 INFO Executor: OS info Linux, 6.17.0-20-generic, amd64
+[2026-04-07T00:10:34.509+0000] {subprocess.py:93} INFO - 26/04/07 00:10:34 INFO Executor: Java version 17.0.12
+[2026-04-07T00:10:34.515+0000] {subprocess.py:93} INFO - 26/04/07 00:10:34 INFO Executor: Starting executor with user classpath (userClassPathFirst = false): ''
+[2026-04-07T00:10:34.516+0000] {subprocess.py:93} INFO - 26/04/07 00:10:34 INFO Executor: Created or updated repl class loader org.apache.spark.util.MutableURLClassLoader@6e4599c0 for default.
+[2026-04-07T00:10:34.526+0000] {subprocess.py:93} INFO - 26/04/07 00:10:34 INFO Executor: Fetching spark://328fccd2c30d:45825/jars/project-spark-scala-etl-assembly-0.1.0-SNAPSHOT.jar with timestamp 1775520633592
+[2026-04-07T00:10:34.573+0000] {subprocess.py:93} INFO - 26/04/07 00:10:34 INFO TransportClientFactory: Successfully created connection to 328fccd2c30d/172.21.0.6:45825 after 26 ms (0 ms spent in bootstraps)
+[2026-04-07T00:10:34.577+0000] {subprocess.py:93} INFO - 26/04/07 00:10:34 INFO Utils: Fetching spark://328fccd2c30d:45825/jars/project-spark-scala-etl-assembly-0.1.0-SNAPSHOT.jar to /tmp/spark-ce8765aa-1171-4a1a-b89f-410a8ddc1bea/userFiles-3cd29652-9d1b-4ef5-9d1a-d17ac012f277/fetchFileTemp12993110895731332095.tmp
+[2026-04-07T00:10:38.165+0000] {subprocess.py:93} INFO - 26/04/07 00:10:38 INFO Executor: Adding file:/tmp/spark-ce8765aa-1171-4a1a-b89f-410a8ddc1bea/userFiles-3cd29652-9d1b-4ef5-9d1a-d17ac012f277/project-spark-scala-etl-assembly-0.1.0-SNAPSHOT.jar to class loader default
+[2026-04-07T00:10:38.174+0000] {subprocess.py:93} INFO - 26/04/07 00:10:38 INFO Utils: Successfully started service 'org.apache.spark.network.netty.NettyBlockTransferService' on port 34725.
+[2026-04-07T00:10:38.174+0000] {subprocess.py:93} INFO - 26/04/07 00:10:38 INFO NettyBlockTransferService: Server created on 328fccd2c30d:34725
+[2026-04-07T00:10:38.176+0000] {subprocess.py:93} INFO - 26/04/07 00:10:38 INFO BlockManager: Using org.apache.spark.storage.RandomBlockReplicationPolicy for block replication policy
+[2026-04-07T00:10:38.184+0000] {subprocess.py:93} INFO - 26/04/07 00:10:38 INFO BlockManagerMaster: Registering BlockManager BlockManagerId(driver, 328fccd2c30d, 34725, None)
+[2026-04-07T00:10:38.187+0000] {subprocess.py:93} INFO - 26/04/07 00:10:38 INFO BlockManagerMasterEndpoint: Registering block manager 328fccd2c30d:34725 with 434.4 MiB RAM, BlockManagerId(driver, 328fccd2c30d, 34725, None)
+[2026-04-07T00:10:38.190+0000] {subprocess.py:93} INFO - 26/04/07 00:10:38 INFO BlockManagerMaster: Registered BlockManager BlockManagerId(driver, 328fccd2c30d, 34725, None)
+[2026-04-07T00:10:38.191+0000] {subprocess.py:93} INFO - 26/04/07 00:10:38 INFO BlockManager: Initialized BlockManager: BlockManagerId(driver, 328fccd2c30d, 34725, None)
+[2026-04-07T00:10:38.414+0000] {subprocess.py:93} INFO - Running pipelines: forbes, transactions, tweets, tweets-user
+[2026-04-07T00:10:38.414+0000] {subprocess.py:93} INFO - Input directory: /opt/project/data/input
+[2026-04-07T00:10:38.414+0000] {subprocess.py:93} INFO - Output directory: /opt/project/data/output
+[2026-04-07T00:10:46.092+0000] {subprocess.py:93} INFO - [Stage 2:>                                                          (0 + 1) / 1]                                                                                26/04/07 00:10:46 WARN SparkStringUtils: Truncated the string representation of a plan since it was too large. This behavior can be adjusted by setting 'spark.sql.debug.maxToStringFields'.
+[2026-04-07T00:10:47.555+0000] {subprocess.py:93} INFO - [Stage 10:>                                                         (0 + 1) / 1]                                                                                Transactions pipeline completed.
+[2026-04-07T00:10:56.274+0000] {subprocess.py:93} INFO - [Stage 17:>                                                        (0 + 8) / 11][Stage 17:=====>                                                   (1 + 8) / 11][Stage 17:==========>                                              (2 + 8) / 11][Stage 17:=========================>                               (5 + 6) / 11][Stage 17:====================================>                    (7 + 4) / 11][Stage 17:==================================================>     (10 + 1) / 11][Stage 18:=====>                                                   (1 + 8) / 11][Stage 18:====================>                                    (4 + 7) / 11][Stage 18:==============================================>          (9 + 2) / 11]26/04/07 00:10:56 WARN MemoryManager: Total allocation exceeds 95.00% (1,020,054,720 bytes) of heap memory
+[2026-04-07T00:10:56.274+0000] {subprocess.py:93} INFO - Scaling row group sizes to 95.00% for 8 writers
+[2026-04-07T00:10:57.005+0000] {subprocess.py:93} INFO - [Stage 19:>                                                        (0 + 8) / 11]26/04/07 00:10:57 WARN MemoryManager: Total allocation exceeds 95.00% (1,020,054,720 bytes) of heap memory
+[2026-04-07T00:10:57.006+0000] {subprocess.py:93} INFO - Scaling row group sizes to 95.00% for 8 writers
+[2026-04-07T00:10:57.253+0000] {subprocess.py:93} INFO - [Stage 19:==========>                                              (2 + 8) / 11]26/04/07 00:10:57 WARN MemoryManager: Total allocation exceeds 95.00% (1,020,054,720 bytes) of heap memory
+[2026-04-07T00:10:57.253+0000] {subprocess.py:93} INFO - Scaling row group sizes to 95.00% for 8 writers
+[2026-04-07T00:10:57.951+0000] {subprocess.py:93} INFO - [Stage 19:====================>                                    (4 + 7) / 11][Stage 19:==================================================>     (10 + 1) / 11]                                                                                26/04/07 00:10:57 WARN MemoryManager: Total allocation exceeds 95.00% (1,020,054,720 bytes) of heap memory
+[2026-04-07T00:10:57.951+0000] {subprocess.py:93} INFO - Scaling row group sizes to 95.00% for 8 writers
+[2026-04-07T00:10:59.967+0000] {subprocess.py:93} INFO - [Stage 20:===============================>                         (6 + 5) / 11]                                                                                Tweets pipeline completed.
+[2026-04-07T00:11:02.744+0000] {subprocess.py:93} INFO - [Stage 39:>                                                         (0 + 1) / 1]                                                                                Forbes pipeline completed.
+[2026-04-07T00:11:04.904+0000] {subprocess.py:93} INFO - Tweets user pipeline completed.
+[2026-04-07T00:11:05.169+0000] {subprocess.py:97} INFO - Command exited with return code 0
+[2026-04-07T00:11:05.170+0000] {taskinstance.py:441} INFO - ::group::Post task execution logs
+[2026-04-07T00:11:05.188+0000] {taskinstance.py:1206} INFO - Marking task as SUCCESS. dag_id=project_spark_hdfs_pipeline, task_id=run_spark_transform, run_id=manual__2026-04-07T00:03:15+00:00, execution_date=20260407T000315, start_date=20260407T001020, end_date=20260407T001105
+[2026-04-07T00:11:05.229+0000] {local_task_job_runner.py:240} INFO - Task exited with return code 0
+[2026-04-07T00:11:05.242+0000] {taskinstance.py:3498} INFO - 1 downstream tasks scheduled from follow-on schedule check
+[2026-04-07T00:11:05.251+0000] {local_task_job_runner.py:222} INFO - ::endgroup::

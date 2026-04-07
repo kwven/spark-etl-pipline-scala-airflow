@@ -1,0 +1,70 @@
+[2026-04-07T00:39:20.752+0000] {local_task_job_runner.py:120} INFO - ::group::Pre task execution logs
+[2026-04-07T00:39:20.771+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: project_spark_hdfs_pipeline.export_results_locally manual__2026-04-07T00:33:49+00:00 [queued]>
+[2026-04-07T00:39:20.776+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: project_spark_hdfs_pipeline.export_results_locally manual__2026-04-07T00:33:49+00:00 [queued]>
+[2026-04-07T00:39:20.776+0000] {taskinstance.py:2306} INFO - Starting attempt 1 of 1
+[2026-04-07T00:39:20.797+0000] {taskinstance.py:2330} INFO - Executing <Task(BashOperator): export_results_locally> on 2026-04-07 00:33:49+00:00
+[2026-04-07T00:39:20.801+0000] {standard_task_runner.py:63} INFO - Started process 628 to run task
+[2026-04-07T00:39:20.803+0000] {standard_task_runner.py:90} INFO - Running: ['airflow', 'tasks', 'run', 'project_spark_hdfs_pipeline', 'export_results_locally', 'manual__2026-04-07T00:33:49+00:00', '--job-id', '33', '--raw', '--subdir', 'DAGS_FOLDER/project_spark_hdfs_pipeline.py', '--cfg-path', '/tmp/tmp13gtg1wr']
+[2026-04-07T00:39:20.804+0000] {standard_task_runner.py:91} INFO - Job 33: Subtask export_results_locally
+[2026-04-07T00:39:20.838+0000] {task_command.py:426} INFO - Running <TaskInstance: project_spark_hdfs_pipeline.export_results_locally manual__2026-04-07T00:33:49+00:00 [running]> on host 5b034116cd08
+[2026-04-07T00:39:20.899+0000] {taskinstance.py:2648} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='airflow' AIRFLOW_CTX_DAG_ID='project_spark_hdfs_pipeline' AIRFLOW_CTX_TASK_ID='export_results_locally' AIRFLOW_CTX_EXECUTION_DATE='2026-04-07T00:33:49+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2026-04-07T00:33:49+00:00'
+[2026-04-07T00:39:20.900+0000] {taskinstance.py:430} INFO - ::endgroup::
+[2026-04-07T00:39:20.912+0000] {subprocess.py:63} INFO - Tmp dir root location: /tmp
+[2026-04-07T00:39:20.912+0000] {subprocess.py:75} INFO - Running command: ['/usr/bin/bash', '-c', "/bin/bash -lc '/opt/project/scripts/download-hdfs-results.sh'"]
+[2026-04-07T00:39:20.920+0000] {subprocess.py:86} INFO - Output:
+[2026-04-07T00:39:22.141+0000] {subprocess.py:93} INFO - 2026-04-07 00:39:22,141 INFO sasl.SaslDataTransferClient: SASL encryption trust check: localHostTrusted = false, remoteHostTrusted = false
+[2026-04-07T00:39:23.982+0000] {subprocess.py:93} INFO - 2026-04-07 00:39:23,981 INFO sasl.SaslDataTransferClient: SASL encryption trust check: localHostTrusted = false, remoteHostTrusted = false
+[2026-04-07T00:39:24.757+0000] {subprocess.py:93} INFO - /opt/project/data/output/hdfs-parquet
+[2026-04-07T00:39:24.757+0000] {subprocess.py:93} INFO - /opt/project/data/output/hdfs-parquet/forbes
+[2026-04-07T00:39:24.758+0000] {subprocess.py:93} INFO - /opt/project/data/output/hdfs-parquet/forbes/cleaned_forbes
+[2026-04-07T00:39:24.758+0000] {subprocess.py:93} INFO - /opt/project/data/output/hdfs-parquet/forbes/country_counts
+[2026-04-07T00:39:24.758+0000] {subprocess.py:93} INFO - /opt/project/data/output/hdfs-parquet/forbes/top_10_self_made
+[2026-04-07T00:39:24.758+0000] {subprocess.py:93} INFO - /opt/project/data/output/hdfs-parquet/forbes/under_fifty
+[2026-04-07T00:39:24.758+0000] {subprocess.py:93} INFO - /opt/project/data/output/hdfs-parquet/transactions
+[2026-04-07T00:39:24.758+0000] {subprocess.py:93} INFO - /opt/project/data/output/hdfs-parquet/transactions/china
+[2026-04-07T00:39:24.758+0000] {subprocess.py:93} INFO - /opt/project/data/output/hdfs-parquet/transactions/cleaned_transactions
+[2026-04-07T00:39:24.758+0000] {subprocess.py:93} INFO - /opt/project/data/output/hdfs-parquet/transactions/france
+[2026-04-07T00:39:24.758+0000] {subprocess.py:93} INFO - /opt/project/data/output/hdfs-parquet/transactions/poland
+[2026-04-07T00:39:24.758+0000] {subprocess.py:93} INFO - /opt/project/data/output/hdfs-parquet/transactions/top_10_countries
+[2026-04-07T00:39:24.759+0000] {subprocess.py:93} INFO - /opt/project/data/output/hdfs-parquet/transactions/usa
+[2026-04-07T00:39:24.759+0000] {subprocess.py:93} INFO - /opt/project/data/output/hdfs-parquet/tweets
+[2026-04-07T00:39:24.759+0000] {subprocess.py:93} INFO - /opt/project/data/output/hdfs-parquet/tweets-user
+[2026-04-07T00:39:24.759+0000] {subprocess.py:93} INFO - /opt/project/data/output/hdfs-parquet/tweets-user/cleaned_tweets_user
+[2026-04-07T00:39:24.759+0000] {subprocess.py:93} INFO - /opt/project/data/output/hdfs-parquet/tweets-user/top_10_liked_posts
+[2026-04-07T00:39:24.759+0000] {subprocess.py:93} INFO - /opt/project/data/output/hdfs-parquet/tweets-user/top_10_retweeted_posts
+[2026-04-07T00:39:24.759+0000] {subprocess.py:93} INFO - /opt/project/data/output/hdfs-parquet/tweets-user/user_post_count
+[2026-04-07T00:39:24.759+0000] {subprocess.py:93} INFO - /opt/project/data/output/hdfs-parquet/tweets-user/word_count
+[2026-04-07T00:39:24.759+0000] {subprocess.py:93} INFO - /opt/project/data/output/hdfs-parquet/tweets/cleaned_tweets
+[2026-04-07T00:39:24.759+0000] {subprocess.py:93} INFO - /opt/project/data/output/hdfs-parquet/tweets/hashtag_count
+[2026-04-07T00:39:24.759+0000] {subprocess.py:93} INFO - /opt/project/data/output/hdfs-parquet/tweets/source_count
+[2026-04-07T00:39:24.760+0000] {subprocess.py:93} INFO - /opt/project/data/output/hdfs-parquet/tweets/trump_tweets_us
+[2026-04-07T00:39:24.760+0000] {subprocess.py:93} INFO - /opt/project/data/output/hdfs-csv
+[2026-04-07T00:39:24.760+0000] {subprocess.py:93} INFO - /opt/project/data/output/hdfs-csv/forbes
+[2026-04-07T00:39:24.760+0000] {subprocess.py:93} INFO - /opt/project/data/output/hdfs-csv/forbes/cleaned_forbes
+[2026-04-07T00:39:24.760+0000] {subprocess.py:93} INFO - /opt/project/data/output/hdfs-csv/forbes/country_counts
+[2026-04-07T00:39:24.760+0000] {subprocess.py:93} INFO - /opt/project/data/output/hdfs-csv/forbes/top_10_self_made
+[2026-04-07T00:39:24.760+0000] {subprocess.py:93} INFO - /opt/project/data/output/hdfs-csv/forbes/under_fifty
+[2026-04-07T00:39:24.760+0000] {subprocess.py:93} INFO - /opt/project/data/output/hdfs-csv/transactions
+[2026-04-07T00:39:24.760+0000] {subprocess.py:93} INFO - /opt/project/data/output/hdfs-csv/transactions/china
+[2026-04-07T00:39:24.760+0000] {subprocess.py:93} INFO - /opt/project/data/output/hdfs-csv/transactions/cleaned_transactions
+[2026-04-07T00:39:24.760+0000] {subprocess.py:93} INFO - /opt/project/data/output/hdfs-csv/transactions/france
+[2026-04-07T00:39:24.760+0000] {subprocess.py:93} INFO - /opt/project/data/output/hdfs-csv/transactions/poland
+[2026-04-07T00:39:24.761+0000] {subprocess.py:93} INFO - /opt/project/data/output/hdfs-csv/transactions/top_10_countries
+[2026-04-07T00:39:24.761+0000] {subprocess.py:93} INFO - /opt/project/data/output/hdfs-csv/transactions/usa
+[2026-04-07T00:39:24.761+0000] {subprocess.py:93} INFO - /opt/project/data/output/hdfs-csv/tweets
+[2026-04-07T00:39:24.761+0000] {subprocess.py:93} INFO - /opt/project/data/output/hdfs-csv/tweets-user
+[2026-04-07T00:39:24.761+0000] {subprocess.py:93} INFO - /opt/project/data/output/hdfs-csv/tweets-user/cleaned_tweets_user
+[2026-04-07T00:39:24.761+0000] {subprocess.py:93} INFO - /opt/project/data/output/hdfs-csv/tweets-user/top_10_liked_posts
+[2026-04-07T00:39:24.761+0000] {subprocess.py:93} INFO - /opt/project/data/output/hdfs-csv/tweets-user/top_10_retweeted_posts
+[2026-04-07T00:39:24.761+0000] {subprocess.py:93} INFO - /opt/project/data/output/hdfs-csv/tweets-user/user_post_count
+[2026-04-07T00:39:24.761+0000] {subprocess.py:93} INFO - /opt/project/data/output/hdfs-csv/tweets-user/word_count
+[2026-04-07T00:39:24.761+0000] {subprocess.py:93} INFO - /opt/project/data/output/hdfs-csv/tweets/cleaned_tweets
+[2026-04-07T00:39:24.761+0000] {subprocess.py:93} INFO - /opt/project/data/output/hdfs-csv/tweets/hashtag_count
+[2026-04-07T00:39:24.762+0000] {subprocess.py:93} INFO - /opt/project/data/output/hdfs-csv/tweets/source_count
+[2026-04-07T00:39:24.762+0000] {subprocess.py:93} INFO - /opt/project/data/output/hdfs-csv/tweets/trump_tweets_us
+[2026-04-07T00:39:24.762+0000] {subprocess.py:97} INFO - Command exited with return code 0
+[2026-04-07T00:39:24.762+0000] {taskinstance.py:441} INFO - ::group::Post task execution logs
+[2026-04-07T00:39:24.779+0000] {taskinstance.py:1206} INFO - Marking task as SUCCESS. dag_id=project_spark_hdfs_pipeline, task_id=export_results_locally, run_id=manual__2026-04-07T00:33:49+00:00, execution_date=20260407T003349, start_date=20260407T003920, end_date=20260407T003924
+[2026-04-07T00:39:24.825+0000] {local_task_job_runner.py:240} INFO - Task exited with return code 0
+[2026-04-07T00:39:24.833+0000] {taskinstance.py:3498} INFO - 0 downstream tasks scheduled from follow-on schedule check
+[2026-04-07T00:39:24.833+0000] {local_task_job_runner.py:222} INFO - ::endgroup::

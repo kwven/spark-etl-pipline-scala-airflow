@@ -1,0 +1,31 @@
+[2026-04-07T00:20:57.204+0000] {local_task_job_runner.py:120} INFO - ::group::Pre task execution logs
+[2026-04-07T00:20:57.219+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: project_spark_hdfs_pipeline.upload_raw_to_hdfs manual__2026-04-07T00:20:47.975493+00:00 [queued]>
+[2026-04-07T00:20:57.223+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: project_spark_hdfs_pipeline.upload_raw_to_hdfs manual__2026-04-07T00:20:47.975493+00:00 [queued]>
+[2026-04-07T00:20:57.223+0000] {taskinstance.py:2306} INFO - Starting attempt 1 of 1
+[2026-04-07T00:20:57.237+0000] {taskinstance.py:2330} INFO - Executing <Task(BashOperator): upload_raw_to_hdfs> on 2026-04-07 00:20:47.975493+00:00
+[2026-04-07T00:20:57.242+0000] {standard_task_runner.py:63} INFO - Started process 1743 to run task
+[2026-04-07T00:20:57.243+0000] {standard_task_runner.py:90} INFO - Running: ['airflow', 'tasks', 'run', 'project_spark_hdfs_pipeline', 'upload_raw_to_hdfs', 'manual__2026-04-07T00:20:47.975493+00:00', '--job-id', '19', '--raw', '--subdir', 'DAGS_FOLDER/project_spark_hdfs_pipeline.py', '--cfg-path', '/tmp/tmpzdd8wm_x']
+[2026-04-07T00:20:57.244+0000] {standard_task_runner.py:91} INFO - Job 19: Subtask upload_raw_to_hdfs
+[2026-04-07T00:20:57.268+0000] {task_command.py:426} INFO - Running <TaskInstance: project_spark_hdfs_pipeline.upload_raw_to_hdfs manual__2026-04-07T00:20:47.975493+00:00 [running]> on host 5b034116cd08
+[2026-04-07T00:20:57.321+0000] {taskinstance.py:2648} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='airflow' AIRFLOW_CTX_DAG_ID='project_spark_hdfs_pipeline' AIRFLOW_CTX_TASK_ID='upload_raw_to_hdfs' AIRFLOW_CTX_EXECUTION_DATE='2026-04-07T00:20:47.975493+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2026-04-07T00:20:47.975493+00:00'
+[2026-04-07T00:20:57.321+0000] {taskinstance.py:430} INFO - ::endgroup::
+[2026-04-07T00:20:57.330+0000] {subprocess.py:63} INFO - Tmp dir root location: /tmp
+[2026-04-07T00:20:57.331+0000] {subprocess.py:75} INFO - Running command: ['/usr/bin/bash', '-c', "/bin/bash -lc '/opt/project/scripts/upload-hdfs-inputs.sh'"]
+[2026-04-07T00:20:57.338+0000] {subprocess.py:86} INFO - Output:
+[2026-04-07T00:20:59.724+0000] {subprocess.py:93} INFO - 2026-04-07 00:20:59,723 INFO sasl.SaslDataTransferClient: SASL encryption trust check: localHostTrusted = false, remoteHostTrusted = false
+[2026-04-07T00:20:59.848+0000] {subprocess.py:93} INFO - 2026-04-07 00:20:59,847 INFO sasl.SaslDataTransferClient: SASL encryption trust check: localHostTrusted = false, remoteHostTrusted = false
+[2026-04-07T00:21:00.417+0000] {subprocess.py:93} INFO - 2026-04-07 00:21:00,416 INFO sasl.SaslDataTransferClient: SASL encryption trust check: localHostTrusted = false, remoteHostTrusted = false
+[2026-04-07T00:21:00.442+0000] {subprocess.py:93} INFO - 2026-04-07 00:21:00,442 INFO sasl.SaslDataTransferClient: SASL encryption trust check: localHostTrusted = false, remoteHostTrusted = false
+[2026-04-07T00:21:00.465+0000] {subprocess.py:93} INFO - 2026-04-07 00:21:00,464 INFO sasl.SaslDataTransferClient: SASL encryption trust check: localHostTrusted = false, remoteHostTrusted = false
+[2026-04-07T00:21:02.366+0000] {subprocess.py:93} INFO - Found 5 items
+[2026-04-07T00:21:02.368+0000] {subprocess.py:93} INFO - -rw-r--r--   1 root supergroup    3904639 2026-04-07 00:20 /project-spark/raw/input/GRAMMYs_tweets.csv
+[2026-04-07T00:21:02.368+0000] {subprocess.py:93} INFO - -rw-r--r--   1 root supergroup   68713814 2026-04-07 00:21 /project-spark/raw/input/covid19_tweets.csv
+[2026-04-07T00:21:02.368+0000] {subprocess.py:93} INFO - -rw-r--r--   1 root supergroup    7277599 2026-04-07 00:21 /project-spark/raw/input/financial.csv
+[2026-04-07T00:21:02.368+0000] {subprocess.py:93} INFO - -rw-r--r--   1 root supergroup    1992566 2026-04-07 00:21 /project-spark/raw/input/forbes_2022_billionaires.csv
+[2026-04-07T00:21:02.368+0000] {subprocess.py:93} INFO - -rw-r--r--   1 root supergroup    2713677 2026-04-07 00:21 /project-spark/raw/input/twitter_dataset.csv
+[2026-04-07T00:21:02.808+0000] {subprocess.py:97} INFO - Command exited with return code 0
+[2026-04-07T00:21:02.808+0000] {taskinstance.py:441} INFO - ::group::Post task execution logs
+[2026-04-07T00:21:02.827+0000] {taskinstance.py:1206} INFO - Marking task as SUCCESS. dag_id=project_spark_hdfs_pipeline, task_id=upload_raw_to_hdfs, run_id=manual__2026-04-07T00:20:47.975493+00:00, execution_date=20260407T002047, start_date=20260407T002057, end_date=20260407T002102
+[2026-04-07T00:21:02.868+0000] {local_task_job_runner.py:240} INFO - Task exited with return code 0
+[2026-04-07T00:21:02.882+0000] {taskinstance.py:3498} INFO - 1 downstream tasks scheduled from follow-on schedule check
+[2026-04-07T00:21:02.890+0000] {local_task_job_runner.py:222} INFO - ::endgroup::

@@ -1,0 +1,163 @@
+[2026-04-07T01:01:15.316+0000] {local_task_job_runner.py:120} INFO - ::group::Pre task execution logs
+[2026-04-07T01:01:15.339+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: project_spark_hdfs_pipeline.list_hdfs_results scheduled__2026-04-06T01:00:00+00:00 [queued]>
+[2026-04-07T01:01:15.345+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: project_spark_hdfs_pipeline.list_hdfs_results scheduled__2026-04-06T01:00:00+00:00 [queued]>
+[2026-04-07T01:01:15.345+0000] {taskinstance.py:2306} INFO - Starting attempt 1 of 1
+[2026-04-07T01:01:15.362+0000] {taskinstance.py:2330} INFO - Executing <Task(BashOperator): list_hdfs_results> on 2026-04-06 01:00:00+00:00
+[2026-04-07T01:01:15.366+0000] {standard_task_runner.py:63} INFO - Started process 2162 to run task
+[2026-04-07T01:01:15.367+0000] {standard_task_runner.py:90} INFO - Running: ['airflow', 'tasks', 'run', 'project_spark_hdfs_pipeline', 'list_hdfs_results', 'scheduled__2026-04-06T01:00:00+00:00', '--job-id', '37', '--raw', '--subdir', 'DAGS_FOLDER/project_spark_hdfs_pipeline.py', '--cfg-path', '/tmp/tmptv__lw2v']
+[2026-04-07T01:01:15.368+0000] {standard_task_runner.py:91} INFO - Job 37: Subtask list_hdfs_results
+[2026-04-07T01:01:15.399+0000] {task_command.py:426} INFO - Running <TaskInstance: project_spark_hdfs_pipeline.list_hdfs_results scheduled__2026-04-06T01:00:00+00:00 [running]> on host 5b034116cd08
+[2026-04-07T01:01:15.459+0000] {taskinstance.py:2648} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='airflow' AIRFLOW_CTX_DAG_ID='project_spark_hdfs_pipeline' AIRFLOW_CTX_TASK_ID='list_hdfs_results' AIRFLOW_CTX_EXECUTION_DATE='2026-04-06T01:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2026-04-06T01:00:00+00:00'
+[2026-04-07T01:01:15.459+0000] {taskinstance.py:430} INFO - ::endgroup::
+[2026-04-07T01:01:15.473+0000] {subprocess.py:63} INFO - Tmp dir root location: /tmp
+[2026-04-07T01:01:15.473+0000] {subprocess.py:75} INFO - Running command: ['/usr/bin/bash', '-c', "/bin/bash -lc '/opt/project/scripts/list-hdfs-results.sh'"]
+[2026-04-07T01:01:15.481+0000] {subprocess.py:86} INFO - Output:
+[2026-04-07T01:01:15.493+0000] {subprocess.py:93} INFO - == HDFS parquet results ==
+[2026-04-07T01:01:18.021+0000] {subprocess.py:93} INFO - drwxr-xr-x   - spark supergroup          0 2026-04-07 01:01 /project-spark/curated/parquet/forbes
+[2026-04-07T01:01:18.023+0000] {subprocess.py:93} INFO - drwxr-xr-x   - spark supergroup          0 2026-04-07 01:01 /project-spark/curated/parquet/forbes/cleaned_forbes
+[2026-04-07T01:01:18.025+0000] {subprocess.py:93} INFO - -rw-r--r--   3 spark supergroup          0 2026-04-07 01:01 /project-spark/curated/parquet/forbes/cleaned_forbes/_SUCCESS
+[2026-04-07T01:01:18.026+0000] {subprocess.py:93} INFO - -rw-r--r--   3 spark supergroup     103285 2026-04-07 01:01 /project-spark/curated/parquet/forbes/cleaned_forbes/part-00000-9d5c03f3-b442-468c-bd6b-7d54a95a9cc3-c000.snappy.parquet
+[2026-04-07T01:01:18.026+0000] {subprocess.py:93} INFO - drwxr-xr-x   - spark supergroup          0 2026-04-07 01:01 /project-spark/curated/parquet/forbes/country_counts
+[2026-04-07T01:01:18.027+0000] {subprocess.py:93} INFO - -rw-r--r--   3 spark supergroup          0 2026-04-07 01:01 /project-spark/curated/parquet/forbes/country_counts/_SUCCESS
+[2026-04-07T01:01:18.028+0000] {subprocess.py:93} INFO - -rw-r--r--   3 spark supergroup       1839 2026-04-07 01:01 /project-spark/curated/parquet/forbes/country_counts/part-00000-10426cc0-fb74-47a9-a89e-8581bd46642a-c000.snappy.parquet
+[2026-04-07T01:01:18.028+0000] {subprocess.py:93} INFO - drwxr-xr-x   - spark supergroup          0 2026-04-07 01:01 /project-spark/curated/parquet/forbes/top_10_self_made
+[2026-04-07T01:01:18.029+0000] {subprocess.py:93} INFO - -rw-r--r--   3 spark supergroup          0 2026-04-07 01:01 /project-spark/curated/parquet/forbes/top_10_self_made/_SUCCESS
+[2026-04-07T01:01:18.030+0000] {subprocess.py:93} INFO - -rw-r--r--   3 spark supergroup       1571 2026-04-07 01:01 /project-spark/curated/parquet/forbes/top_10_self_made/part-00000-7d8e2834-0af4-4ff0-840e-6aadab72e627-c000.snappy.parquet
+[2026-04-07T01:01:18.030+0000] {subprocess.py:93} INFO - drwxr-xr-x   - spark supergroup          0 2026-04-07 01:01 /project-spark/curated/parquet/forbes/under_fifty
+[2026-04-07T01:01:18.031+0000] {subprocess.py:93} INFO - -rw-r--r--   3 spark supergroup          0 2026-04-07 01:01 /project-spark/curated/parquet/forbes/under_fifty/_SUCCESS
+[2026-04-07T01:01:18.031+0000] {subprocess.py:93} INFO - -rw-r--r--   3 spark supergroup      10899 2026-04-07 01:01 /project-spark/curated/parquet/forbes/under_fifty/part-00000-3c719d42-3092-481f-bd54-300a953aaa1b-c000.snappy.parquet
+[2026-04-07T01:01:18.031+0000] {subprocess.py:93} INFO - drwxr-xr-x   - spark supergroup          0 2026-04-07 01:00 /project-spark/curated/parquet/transactions
+[2026-04-07T01:01:18.033+0000] {subprocess.py:93} INFO - drwxr-xr-x   - spark supergroup          0 2026-04-07 01:00 /project-spark/curated/parquet/transactions/china
+[2026-04-07T01:01:18.034+0000] {subprocess.py:93} INFO - -rw-r--r--   3 spark supergroup          0 2026-04-07 01:00 /project-spark/curated/parquet/transactions/china/_SUCCESS
+[2026-04-07T01:01:18.035+0000] {subprocess.py:93} INFO - -rw-r--r--   3 spark supergroup      18718 2026-04-07 01:00 /project-spark/curated/parquet/transactions/china/part-00000-b9564576-6c82-49c1-a0ac-aa87886e36d6-c000.snappy.parquet
+[2026-04-07T01:01:18.035+0000] {subprocess.py:93} INFO - drwxr-xr-x   - spark supergroup          0 2026-04-07 01:00 /project-spark/curated/parquet/transactions/cleaned_transactions
+[2026-04-07T01:01:18.036+0000] {subprocess.py:93} INFO - -rw-r--r--   3 spark supergroup          0 2026-04-07 01:00 /project-spark/curated/parquet/transactions/cleaned_transactions/_SUCCESS
+[2026-04-07T01:01:18.036+0000] {subprocess.py:93} INFO - -rw-r--r--   3 spark supergroup      74891 2026-04-07 01:00 /project-spark/curated/parquet/transactions/cleaned_transactions/part-00000-8295c368-0e21-4ad0-8ec0-297349574db6-c000.snappy.parquet
+[2026-04-07T01:01:18.036+0000] {subprocess.py:93} INFO - drwxr-xr-x   - spark supergroup          0 2026-04-07 01:00 /project-spark/curated/parquet/transactions/france
+[2026-04-07T01:01:18.037+0000] {subprocess.py:93} INFO - -rw-r--r--   3 spark supergroup          0 2026-04-07 01:00 /project-spark/curated/parquet/transactions/france/_SUCCESS
+[2026-04-07T01:01:18.038+0000] {subprocess.py:93} INFO - -rw-r--r--   3 spark supergroup       7284 2026-04-07 01:00 /project-spark/curated/parquet/transactions/france/part-00000-0d61f095-7e1f-4b4e-b6b9-c2d9265d7a52-c000.snappy.parquet
+[2026-04-07T01:01:18.038+0000] {subprocess.py:93} INFO - drwxr-xr-x   - spark supergroup          0 2026-04-07 01:00 /project-spark/curated/parquet/transactions/poland
+[2026-04-07T01:01:18.039+0000] {subprocess.py:93} INFO - -rw-r--r--   3 spark supergroup          0 2026-04-07 01:00 /project-spark/curated/parquet/transactions/poland/_SUCCESS
+[2026-04-07T01:01:18.039+0000] {subprocess.py:93} INFO - -rw-r--r--   3 spark supergroup       7135 2026-04-07 01:00 /project-spark/curated/parquet/transactions/poland/part-00000-56c24421-cab9-4149-9bf3-58aff3790984-c000.snappy.parquet
+[2026-04-07T01:01:18.039+0000] {subprocess.py:93} INFO - drwxr-xr-x   - spark supergroup          0 2026-04-07 01:00 /project-spark/curated/parquet/transactions/top_10_countries
+[2026-04-07T01:01:18.040+0000] {subprocess.py:93} INFO - -rw-r--r--   3 spark supergroup          0 2026-04-07 01:00 /project-spark/curated/parquet/transactions/top_10_countries/_SUCCESS
+[2026-04-07T01:01:18.040+0000] {subprocess.py:93} INFO - -rw-r--r--   3 spark supergroup       1026 2026-04-07 01:00 /project-spark/curated/parquet/transactions/top_10_countries/part-00000-ce3c350d-6cb9-49c9-ad70-81bbac48bec1-c000.snappy.parquet
+[2026-04-07T01:01:18.040+0000] {subprocess.py:93} INFO - drwxr-xr-x   - spark supergroup          0 2026-04-07 01:00 /project-spark/curated/parquet/transactions/usa
+[2026-04-07T01:01:18.041+0000] {subprocess.py:93} INFO - -rw-r--r--   3 spark supergroup          0 2026-04-07 01:00 /project-spark/curated/parquet/transactions/usa/_SUCCESS
+[2026-04-07T01:01:18.041+0000] {subprocess.py:93} INFO - -rw-r--r--   3 spark supergroup       6410 2026-04-07 01:00 /project-spark/curated/parquet/transactions/usa/part-00000-51a2a77f-1a42-4f8c-b5ef-8aa034146c8d-c000.snappy.parquet
+[2026-04-07T01:01:18.042+0000] {subprocess.py:93} INFO - drwxr-xr-x   - spark supergroup          0 2026-04-07 01:01 /project-spark/curated/parquet/tweets
+[2026-04-07T01:01:18.043+0000] {subprocess.py:93} INFO - drwxr-xr-x   - spark supergroup          0 2026-04-07 01:00 /project-spark/curated/parquet/tweets/cleaned_tweets
+[2026-04-07T01:01:18.048+0000] {subprocess.py:93} INFO - -rw-r--r--   3 spark supergroup          0 2026-04-07 01:00 /project-spark/curated/parquet/tweets/cleaned_tweets/_SUCCESS
+[2026-04-07T01:01:18.049+0000] {subprocess.py:93} INFO - -rw-r--r--   3 spark supergroup    1510081 2026-04-07 01:00 /project-spark/curated/parquet/tweets/cleaned_tweets/part-00000-bdc33c16-7bc9-4311-9bba-12d78175e768-c000.snappy.parquet
+[2026-04-07T01:01:18.049+0000] {subprocess.py:93} INFO - -rw-r--r--   3 spark supergroup    1670441 2026-04-07 01:00 /project-spark/curated/parquet/tweets/cleaned_tweets/part-00001-bdc33c16-7bc9-4311-9bba-12d78175e768-c000.snappy.parquet
+[2026-04-07T01:01:18.049+0000] {subprocess.py:93} INFO - -rw-r--r--   3 spark supergroup    1749910 2026-04-07 01:00 /project-spark/curated/parquet/tweets/cleaned_tweets/part-00002-bdc33c16-7bc9-4311-9bba-12d78175e768-c000.snappy.parquet
+[2026-04-07T01:01:18.049+0000] {subprocess.py:93} INFO - -rw-r--r--   3 spark supergroup    1661587 2026-04-07 01:00 /project-spark/curated/parquet/tweets/cleaned_tweets/part-00003-bdc33c16-7bc9-4311-9bba-12d78175e768-c000.snappy.parquet
+[2026-04-07T01:01:18.049+0000] {subprocess.py:93} INFO - -rw-r--r--   3 spark supergroup    1590645 2026-04-07 01:00 /project-spark/curated/parquet/tweets/cleaned_tweets/part-00004-bdc33c16-7bc9-4311-9bba-12d78175e768-c000.snappy.parquet
+[2026-04-07T01:01:18.050+0000] {subprocess.py:93} INFO - -rw-r--r--   3 spark supergroup    1512056 2026-04-07 01:00 /project-spark/curated/parquet/tweets/cleaned_tweets/part-00005-bdc33c16-7bc9-4311-9bba-12d78175e768-c000.snappy.parquet
+[2026-04-07T01:01:18.050+0000] {subprocess.py:93} INFO - -rw-r--r--   3 spark supergroup    1586974 2026-04-07 01:00 /project-spark/curated/parquet/tweets/cleaned_tweets/part-00006-bdc33c16-7bc9-4311-9bba-12d78175e768-c000.snappy.parquet
+[2026-04-07T01:01:18.050+0000] {subprocess.py:93} INFO - -rw-r--r--   3 spark supergroup     832330 2026-04-07 01:00 /project-spark/curated/parquet/tweets/cleaned_tweets/part-00007-bdc33c16-7bc9-4311-9bba-12d78175e768-c000.snappy.parquet
+[2026-04-07T01:01:18.050+0000] {subprocess.py:93} INFO - -rw-r--r--   3 spark supergroup    1650830 2026-04-07 01:00 /project-spark/curated/parquet/tweets/cleaned_tweets/part-00008-bdc33c16-7bc9-4311-9bba-12d78175e768-c000.snappy.parquet
+[2026-04-07T01:01:18.050+0000] {subprocess.py:93} INFO - -rw-r--r--   3 spark supergroup    1261212 2026-04-07 01:00 /project-spark/curated/parquet/tweets/cleaned_tweets/part-00009-bdc33c16-7bc9-4311-9bba-12d78175e768-c000.snappy.parquet
+[2026-04-07T01:01:18.050+0000] {subprocess.py:93} INFO - -rw-r--r--   3 spark supergroup     375428 2026-04-07 01:00 /project-spark/curated/parquet/tweets/cleaned_tweets/part-00010-bdc33c16-7bc9-4311-9bba-12d78175e768-c000.snappy.parquet
+[2026-04-07T01:01:18.051+0000] {subprocess.py:93} INFO - drwxr-xr-x   - spark supergroup          0 2026-04-07 01:01 /project-spark/curated/parquet/tweets/hashtag_count
+[2026-04-07T01:01:18.052+0000] {subprocess.py:93} INFO - -rw-r--r--   3 spark supergroup          0 2026-04-07 01:01 /project-spark/curated/parquet/tweets/hashtag_count/_SUCCESS
+[2026-04-07T01:01:18.052+0000] {subprocess.py:93} INFO - -rw-r--r--   3 spark supergroup       2513 2026-04-07 01:01 /project-spark/curated/parquet/tweets/hashtag_count/part-00000-f0fd2249-e0e5-477e-9f61-9a6bc5215420-c000.snappy.parquet
+[2026-04-07T01:01:18.053+0000] {subprocess.py:93} INFO - drwxr-xr-x   - spark supergroup          0 2026-04-07 01:00 /project-spark/curated/parquet/tweets/source_count
+[2026-04-07T01:01:18.054+0000] {subprocess.py:93} INFO - -rw-r--r--   3 spark supergroup          0 2026-04-07 01:01 /project-spark/curated/parquet/tweets/source_count/_SUCCESS
+[2026-04-07T01:01:18.054+0000] {subprocess.py:93} INFO - -rw-r--r--   3 spark supergroup        968 2026-04-07 01:00 /project-spark/curated/parquet/tweets/source_count/part-00000-5cce8e7b-892f-4a6b-8063-8fa7c0134a60-c000.snappy.parquet
+[2026-04-07T01:01:18.054+0000] {subprocess.py:93} INFO - drwxr-xr-x   - spark supergroup          0 2026-04-07 01:00 /project-spark/curated/parquet/tweets/trump_tweets_us
+[2026-04-07T01:01:18.056+0000] {subprocess.py:93} INFO - -rw-r--r--   3 spark supergroup          0 2026-04-07 01:00 /project-spark/curated/parquet/tweets/trump_tweets_us/_SUCCESS
+[2026-04-07T01:01:18.056+0000] {subprocess.py:93} INFO - -rw-r--r--   3 spark supergroup      10811 2026-04-07 01:00 /project-spark/curated/parquet/tweets/trump_tweets_us/part-00000-8f1bfccc-32cc-45ca-8968-9aeb3c038d3f-c000.snappy.parquet
+[2026-04-07T01:01:18.057+0000] {subprocess.py:93} INFO - -rw-r--r--   3 spark supergroup      11199 2026-04-07 01:00 /project-spark/curated/parquet/tweets/trump_tweets_us/part-00001-8f1bfccc-32cc-45ca-8968-9aeb3c038d3f-c000.snappy.parquet
+[2026-04-07T01:01:18.057+0000] {subprocess.py:93} INFO - -rw-r--r--   3 spark supergroup      12953 2026-04-07 01:00 /project-spark/curated/parquet/tweets/trump_tweets_us/part-00002-8f1bfccc-32cc-45ca-8968-9aeb3c038d3f-c000.snappy.parquet
+[2026-04-07T01:01:18.057+0000] {subprocess.py:93} INFO - -rw-r--r--   3 spark supergroup      12027 2026-04-07 01:00 /project-spark/curated/parquet/tweets/trump_tweets_us/part-00003-8f1bfccc-32cc-45ca-8968-9aeb3c038d3f-c000.snappy.parquet
+[2026-04-07T01:01:18.057+0000] {subprocess.py:93} INFO - -rw-r--r--   3 spark supergroup      10523 2026-04-07 01:00 /project-spark/curated/parquet/tweets/trump_tweets_us/part-00004-8f1bfccc-32cc-45ca-8968-9aeb3c038d3f-c000.snappy.parquet
+[2026-04-07T01:01:18.057+0000] {subprocess.py:93} INFO - -rw-r--r--   3 spark supergroup      10750 2026-04-07 01:00 /project-spark/curated/parquet/tweets/trump_tweets_us/part-00005-8f1bfccc-32cc-45ca-8968-9aeb3c038d3f-c000.snappy.parquet
+[2026-04-07T01:01:18.057+0000] {subprocess.py:93} INFO - -rw-r--r--   3 spark supergroup      12661 2026-04-07 01:00 /project-spark/curated/parquet/tweets/trump_tweets_us/part-00006-8f1bfccc-32cc-45ca-8968-9aeb3c038d3f-c000.snappy.parquet
+[2026-04-07T01:01:18.057+0000] {subprocess.py:93} INFO - -rw-r--r--   3 spark supergroup       8295 2026-04-07 01:00 /project-spark/curated/parquet/tweets/trump_tweets_us/part-00007-8f1bfccc-32cc-45ca-8968-9aeb3c038d3f-c000.snappy.parquet
+[2026-04-07T01:01:18.057+0000] {subprocess.py:93} INFO - drwxr-xr-x   - spark supergroup          0 2026-04-07 01:01 /project-spark/curated/parquet/tweets-user
+[2026-04-07T01:01:18.059+0000] {subprocess.py:93} INFO - drwxr-xr-x   - spark supergroup          0 2026-04-07 01:01 /project-spark/curated/parquet/tweets-user/cleaned_tweets_user
+[2026-04-07T01:01:18.060+0000] {subprocess.py:93} INFO - -rw-r--r--   3 spark supergroup          0 2026-04-07 01:01 /project-spark/curated/parquet/tweets-user/cleaned_tweets_user/_SUCCESS
+[2026-04-07T01:01:18.060+0000] {subprocess.py:93} INFO - -rw-r--r--   3 spark supergroup     795222 2026-04-07 01:01 /project-spark/curated/parquet/tweets-user/cleaned_tweets_user/part-00000-d8d14409-6ce6-4f11-8d87-28183c63fbc9-c000.snappy.parquet
+[2026-04-07T01:01:18.061+0000] {subprocess.py:93} INFO - drwxr-xr-x   - spark supergroup          0 2026-04-07 01:01 /project-spark/curated/parquet/tweets-user/top_10_liked_posts
+[2026-04-07T01:01:18.061+0000] {subprocess.py:93} INFO - -rw-r--r--   3 spark supergroup          0 2026-04-07 01:01 /project-spark/curated/parquet/tweets-user/top_10_liked_posts/_SUCCESS
+[2026-04-07T01:01:18.062+0000] {subprocess.py:93} INFO - -rw-r--r--   3 spark supergroup       4373 2026-04-07 01:01 /project-spark/curated/parquet/tweets-user/top_10_liked_posts/part-00000-6b480b25-adc9-4bb6-a191-5d1acd3ce093-c000.snappy.parquet
+[2026-04-07T01:01:18.062+0000] {subprocess.py:93} INFO - drwxr-xr-x   - spark supergroup          0 2026-04-07 01:01 /project-spark/curated/parquet/tweets-user/top_10_retweeted_posts
+[2026-04-07T01:01:18.063+0000] {subprocess.py:93} INFO - -rw-r--r--   3 spark supergroup          0 2026-04-07 01:01 /project-spark/curated/parquet/tweets-user/top_10_retweeted_posts/_SUCCESS
+[2026-04-07T01:01:18.063+0000] {subprocess.py:93} INFO - -rw-r--r--   3 spark supergroup       4146 2026-04-07 01:01 /project-spark/curated/parquet/tweets-user/top_10_retweeted_posts/part-00000-beb154f4-e258-4c02-b326-2faecc83e5a4-c000.snappy.parquet
+[2026-04-07T01:01:18.063+0000] {subprocess.py:93} INFO - drwxr-xr-x   - spark supergroup          0 2026-04-07 01:01 /project-spark/curated/parquet/tweets-user/user_post_count
+[2026-04-07T01:01:18.064+0000] {subprocess.py:93} INFO - -rw-r--r--   3 spark supergroup          0 2026-04-07 01:01 /project-spark/curated/parquet/tweets-user/user_post_count/_SUCCESS
+[2026-04-07T01:01:18.064+0000] {subprocess.py:93} INFO - -rw-r--r--   3 spark supergroup      81853 2026-04-07 01:01 /project-spark/curated/parquet/tweets-user/user_post_count/part-00000-2a9903fb-ca1f-45f1-a8e3-0be807a8ad7c-c000.snappy.parquet
+[2026-04-07T01:01:18.064+0000] {subprocess.py:93} INFO - drwxr-xr-x   - spark supergroup          0 2026-04-07 01:01 /project-spark/curated/parquet/tweets-user/word_count
+[2026-04-07T01:01:18.065+0000] {subprocess.py:93} INFO - -rw-r--r--   3 spark supergroup          0 2026-04-07 01:01 /project-spark/curated/parquet/tweets-user/word_count/_SUCCESS
+[2026-04-07T01:01:18.065+0000] {subprocess.py:93} INFO - -rw-r--r--   3 spark supergroup      21976 2026-04-07 01:01 /project-spark/curated/parquet/tweets-user/word_count/part-00000-25592fbf-6de7-4042-8ea2-b87875ef7dcf-c000.snappy.parquet
+[2026-04-07T01:01:18.500+0000] {subprocess.py:93} INFO - 
+[2026-04-07T01:01:18.500+0000] {subprocess.py:93} INFO - == HDFS csv results ==
+[2026-04-07T01:01:20.938+0000] {subprocess.py:93} INFO - drwxr-xr-x   - spark supergroup          0 2026-04-07 01:01 /project-spark/curated/csv/forbes
+[2026-04-07T01:01:20.940+0000] {subprocess.py:93} INFO - drwxr-xr-x   - spark supergroup          0 2026-04-07 01:01 /project-spark/curated/csv/forbes/cleaned_forbes
+[2026-04-07T01:01:20.943+0000] {subprocess.py:93} INFO - -rw-r--r--   3 spark supergroup          0 2026-04-07 01:01 /project-spark/curated/csv/forbes/cleaned_forbes/_SUCCESS
+[2026-04-07T01:01:20.943+0000] {subprocess.py:93} INFO - -rw-r--r--   3 spark supergroup     354283 2026-04-07 01:01 /project-spark/curated/csv/forbes/cleaned_forbes/part-00000-b4fa2fc0-3e60-4769-8b26-875e4c9f8036-c000.csv
+[2026-04-07T01:01:20.943+0000] {subprocess.py:93} INFO - drwxr-xr-x   - spark supergroup          0 2026-04-07 01:01 /project-spark/curated/csv/forbes/country_counts
+[2026-04-07T01:01:20.944+0000] {subprocess.py:93} INFO - -rw-r--r--   3 spark supergroup          0 2026-04-07 01:01 /project-spark/curated/csv/forbes/country_counts/_SUCCESS
+[2026-04-07T01:01:20.945+0000] {subprocess.py:93} INFO - -rw-r--r--   3 spark supergroup        886 2026-04-07 01:01 /project-spark/curated/csv/forbes/country_counts/part-00000-ec06fdca-c742-497e-b6a5-4234a5d5706c-c000.csv
+[2026-04-07T01:01:20.945+0000] {subprocess.py:93} INFO - drwxr-xr-x   - spark supergroup          0 2026-04-07 01:01 /project-spark/curated/csv/forbes/top_10_self_made
+[2026-04-07T01:01:20.946+0000] {subprocess.py:93} INFO - -rw-r--r--   3 spark supergroup          0 2026-04-07 01:01 /project-spark/curated/csv/forbes/top_10_self_made/_SUCCESS
+[2026-04-07T01:01:20.946+0000] {subprocess.py:93} INFO - -rw-r--r--   3 spark supergroup        288 2026-04-07 01:01 /project-spark/curated/csv/forbes/top_10_self_made/part-00000-1fa0fd20-34aa-472a-831b-4138bd8f9d00-c000.csv
+[2026-04-07T01:01:20.946+0000] {subprocess.py:93} INFO - drwxr-xr-x   - spark supergroup          0 2026-04-07 01:01 /project-spark/curated/csv/forbes/under_fifty
+[2026-04-07T01:01:20.947+0000] {subprocess.py:93} INFO - -rw-r--r--   3 spark supergroup          0 2026-04-07 01:01 /project-spark/curated/csv/forbes/under_fifty/_SUCCESS
+[2026-04-07T01:01:20.948+0000] {subprocess.py:93} INFO - -rw-r--r--   3 spark supergroup      16824 2026-04-07 01:01 /project-spark/curated/csv/forbes/under_fifty/part-00000-093123f3-5609-4ab9-9d93-24727f4b418a-c000.csv
+[2026-04-07T01:01:20.948+0000] {subprocess.py:93} INFO - drwxr-xr-x   - spark supergroup          0 2026-04-07 01:00 /project-spark/curated/csv/transactions
+[2026-04-07T01:01:20.949+0000] {subprocess.py:93} INFO - drwxr-xr-x   - spark supergroup          0 2026-04-07 01:00 /project-spark/curated/csv/transactions/china
+[2026-04-07T01:01:20.951+0000] {subprocess.py:93} INFO - -rw-r--r--   3 spark supergroup          0 2026-04-07 01:00 /project-spark/curated/csv/transactions/china/_SUCCESS
+[2026-04-07T01:01:20.951+0000] {subprocess.py:93} INFO - -rw-r--r--   3 spark supergroup      24432 2026-04-07 01:00 /project-spark/curated/csv/transactions/china/part-00000-2fbc9421-90bc-48b5-9e69-e5a6451380ff-c000.csv
+[2026-04-07T01:01:20.951+0000] {subprocess.py:93} INFO - drwxr-xr-x   - spark supergroup          0 2026-04-07 01:00 /project-spark/curated/csv/transactions/cleaned_transactions
+[2026-04-07T01:01:20.952+0000] {subprocess.py:93} INFO - -rw-r--r--   3 spark supergroup          0 2026-04-07 01:00 /project-spark/curated/csv/transactions/cleaned_transactions/_SUCCESS
+[2026-04-07T01:01:20.952+0000] {subprocess.py:93} INFO - -rw-r--r--   3 spark supergroup     122668 2026-04-07 01:00 /project-spark/curated/csv/transactions/cleaned_transactions/part-00000-8e22227b-9bea-4aec-83e8-ea3c6c5c49fb-c000.csv
+[2026-04-07T01:01:20.952+0000] {subprocess.py:93} INFO - drwxr-xr-x   - spark supergroup          0 2026-04-07 01:00 /project-spark/curated/csv/transactions/france
+[2026-04-07T01:01:20.954+0000] {subprocess.py:93} INFO - -rw-r--r--   3 spark supergroup          0 2026-04-07 01:00 /project-spark/curated/csv/transactions/france/_SUCCESS
+[2026-04-07T01:01:20.954+0000] {subprocess.py:93} INFO - -rw-r--r--   3 spark supergroup       4641 2026-04-07 01:00 /project-spark/curated/csv/transactions/france/part-00000-e86fa348-5d58-4898-99f9-8fb220ea3492-c000.csv
+[2026-04-07T01:01:20.954+0000] {subprocess.py:93} INFO - drwxr-xr-x   - spark supergroup          0 2026-04-07 01:00 /project-spark/curated/csv/transactions/poland
+[2026-04-07T01:01:20.955+0000] {subprocess.py:93} INFO - -rw-r--r--   3 spark supergroup          0 2026-04-07 01:00 /project-spark/curated/csv/transactions/poland/_SUCCESS
+[2026-04-07T01:01:20.955+0000] {subprocess.py:93} INFO - -rw-r--r--   3 spark supergroup       4308 2026-04-07 01:00 /project-spark/curated/csv/transactions/poland/part-00000-f4090a6f-15ad-4265-bca6-025883cdd3b1-c000.csv
+[2026-04-07T01:01:20.955+0000] {subprocess.py:93} INFO - drwxr-xr-x   - spark supergroup          0 2026-04-07 01:00 /project-spark/curated/csv/transactions/top_10_countries
+[2026-04-07T01:01:20.957+0000] {subprocess.py:93} INFO - -rw-r--r--   3 spark supergroup          0 2026-04-07 01:00 /project-spark/curated/csv/transactions/top_10_countries/_SUCCESS
+[2026-04-07T01:01:20.957+0000] {subprocess.py:93} INFO - -rw-r--r--   3 spark supergroup        132 2026-04-07 01:00 /project-spark/curated/csv/transactions/top_10_countries/part-00000-a6c58c43-d3f9-4819-b98b-afe404c1e681-c000.csv
+[2026-04-07T01:01:20.957+0000] {subprocess.py:93} INFO - drwxr-xr-x   - spark supergroup          0 2026-04-07 01:00 /project-spark/curated/csv/transactions/usa
+[2026-04-07T01:01:20.958+0000] {subprocess.py:93} INFO - -rw-r--r--   3 spark supergroup          0 2026-04-07 01:00 /project-spark/curated/csv/transactions/usa/_SUCCESS
+[2026-04-07T01:01:20.959+0000] {subprocess.py:93} INFO - -rw-r--r--   3 spark supergroup       3406 2026-04-07 01:00 /project-spark/curated/csv/transactions/usa/part-00000-3c6d4934-d178-40b4-ac04-8d6a56d7a3a6-c000.csv
+[2026-04-07T01:01:20.959+0000] {subprocess.py:93} INFO - drwxr-xr-x   - spark supergroup          0 2026-04-07 01:01 /project-spark/curated/csv/tweets
+[2026-04-07T01:01:20.960+0000] {subprocess.py:93} INFO - drwxr-xr-x   - spark supergroup          0 2026-04-07 01:00 /project-spark/curated/csv/tweets/cleaned_tweets
+[2026-04-07T01:01:20.963+0000] {subprocess.py:93} INFO - -rw-r--r--   3 spark supergroup          0 2026-04-07 01:00 /project-spark/curated/csv/tweets/cleaned_tweets/_SUCCESS
+[2026-04-07T01:01:20.963+0000] {subprocess.py:93} INFO - -rw-r--r--   3 spark supergroup   31582133 2026-04-07 01:00 /project-spark/curated/csv/tweets/cleaned_tweets/part-00000-e325354f-f6e0-4b05-b199-71f8a98ae43e-c000.csv
+[2026-04-07T01:01:20.963+0000] {subprocess.py:93} INFO - drwxr-xr-x   - spark supergroup          0 2026-04-07 01:01 /project-spark/curated/csv/tweets/hashtag_count
+[2026-04-07T01:01:20.965+0000] {subprocess.py:93} INFO - -rw-r--r--   3 spark supergroup          0 2026-04-07 01:01 /project-spark/curated/csv/tweets/hashtag_count/_SUCCESS
+[2026-04-07T01:01:20.965+0000] {subprocess.py:93} INFO - -rw-r--r--   3 spark supergroup       1805 2026-04-07 01:01 /project-spark/curated/csv/tweets/hashtag_count/part-00000-b0d1c86c-89a0-4119-8450-7cd44c375fb7-c000.csv
+[2026-04-07T01:01:20.965+0000] {subprocess.py:93} INFO - drwxr-xr-x   - spark supergroup          0 2026-04-07 01:00 /project-spark/curated/csv/tweets/source_count
+[2026-04-07T01:01:20.967+0000] {subprocess.py:93} INFO - -rw-r--r--   3 spark supergroup          0 2026-04-07 01:00 /project-spark/curated/csv/tweets/source_count/_SUCCESS
+[2026-04-07T01:01:20.967+0000] {subprocess.py:93} INFO - -rw-r--r--   3 spark supergroup        130 2026-04-07 01:00 /project-spark/curated/csv/tweets/source_count/part-00000-1de765aa-4675-4a78-8791-f5eafcb87cfe-c000.csv
+[2026-04-07T01:01:20.967+0000] {subprocess.py:93} INFO - drwxr-xr-x   - spark supergroup          0 2026-04-07 01:00 /project-spark/curated/csv/tweets/trump_tweets_us
+[2026-04-07T01:01:20.969+0000] {subprocess.py:93} INFO - -rw-r--r--   3 spark supergroup          0 2026-04-07 01:00 /project-spark/curated/csv/tweets/trump_tweets_us/_SUCCESS
+[2026-04-07T01:01:20.969+0000] {subprocess.py:93} INFO - -rw-r--r--   3 spark supergroup      74909 2026-04-07 01:00 /project-spark/curated/csv/tweets/trump_tweets_us/part-00000-d71e9359-2ed1-48ef-9655-74147387cd25-c000.csv
+[2026-04-07T01:01:20.970+0000] {subprocess.py:93} INFO - drwxr-xr-x   - spark supergroup          0 2026-04-07 01:01 /project-spark/curated/csv/tweets-user
+[2026-04-07T01:01:20.970+0000] {subprocess.py:93} INFO - drwxr-xr-x   - spark supergroup          0 2026-04-07 01:01 /project-spark/curated/csv/tweets-user/cleaned_tweets_user
+[2026-04-07T01:01:20.972+0000] {subprocess.py:93} INFO - -rw-r--r--   3 spark supergroup          0 2026-04-07 01:01 /project-spark/curated/csv/tweets-user/cleaned_tweets_user/_SUCCESS
+[2026-04-07T01:01:20.972+0000] {subprocess.py:93} INFO - -rw-r--r--   3 spark supergroup    1478635 2026-04-07 01:01 /project-spark/curated/csv/tweets-user/cleaned_tweets_user/part-00000-28e37e63-3cb8-4e88-a78e-278c9fa286e5-c000.csv
+[2026-04-07T01:01:20.972+0000] {subprocess.py:93} INFO - drwxr-xr-x   - spark supergroup          0 2026-04-07 01:01 /project-spark/curated/csv/tweets-user/top_10_liked_posts
+[2026-04-07T01:01:20.973+0000] {subprocess.py:93} INFO - -rw-r--r--   3 spark supergroup          0 2026-04-07 01:01 /project-spark/curated/csv/tweets-user/top_10_liked_posts/_SUCCESS
+[2026-04-07T01:01:20.974+0000] {subprocess.py:93} INFO - -rw-r--r--   3 spark supergroup       2338 2026-04-07 01:01 /project-spark/curated/csv/tweets-user/top_10_liked_posts/part-00000-1f708d9c-7ad7-44da-ad8b-cc4d67d940a8-c000.csv
+[2026-04-07T01:01:20.974+0000] {subprocess.py:93} INFO - drwxr-xr-x   - spark supergroup          0 2026-04-07 01:01 /project-spark/curated/csv/tweets-user/top_10_retweeted_posts
+[2026-04-07T01:01:20.975+0000] {subprocess.py:93} INFO - -rw-r--r--   3 spark supergroup          0 2026-04-07 01:01 /project-spark/curated/csv/tweets-user/top_10_retweeted_posts/_SUCCESS
+[2026-04-07T01:01:20.975+0000] {subprocess.py:93} INFO - -rw-r--r--   3 spark supergroup       2127 2026-04-07 01:01 /project-spark/curated/csv/tweets-user/top_10_retweeted_posts/part-00000-178a79e7-1ef6-49a6-9c9c-7ad2ca4d7dfc-c000.csv
+[2026-04-07T01:01:20.975+0000] {subprocess.py:93} INFO - drwxr-xr-x   - spark supergroup          0 2026-04-07 01:01 /project-spark/curated/csv/tweets-user/user_post_count
+[2026-04-07T01:01:20.976+0000] {subprocess.py:93} INFO - -rw-r--r--   3 spark supergroup          0 2026-04-07 01:01 /project-spark/curated/csv/tweets-user/user_post_count/_SUCCESS
+[2026-04-07T01:01:20.976+0000] {subprocess.py:93} INFO - -rw-r--r--   3 spark supergroup     122572 2026-04-07 01:01 /project-spark/curated/csv/tweets-user/user_post_count/part-00000-c753c46e-938e-4c0a-8355-b3a501ece69a-c000.csv
+[2026-04-07T01:01:20.976+0000] {subprocess.py:93} INFO - drwxr-xr-x   - spark supergroup          0 2026-04-07 01:01 /project-spark/curated/csv/tweets-user/word_count
+[2026-04-07T01:01:20.977+0000] {subprocess.py:93} INFO - -rw-r--r--   3 spark supergroup          0 2026-04-07 01:01 /project-spark/curated/csv/tweets-user/word_count/_SUCCESS
+[2026-04-07T01:01:20.977+0000] {subprocess.py:93} INFO - -rw-r--r--   3 spark supergroup      32422 2026-04-07 01:01 /project-spark/curated/csv/tweets-user/word_count/part-00000-083a4047-89a1-41d6-a415-86dbacce7b03-c000.csv
+[2026-04-07T01:01:21.413+0000] {subprocess.py:93} INFO - 
+[2026-04-07T01:01:21.413+0000] {subprocess.py:97} INFO - Command exited with return code 0
+[2026-04-07T01:01:21.413+0000] {taskinstance.py:441} INFO - ::group::Post task execution logs
+[2026-04-07T01:01:21.428+0000] {taskinstance.py:1206} INFO - Marking task as SUCCESS. dag_id=project_spark_hdfs_pipeline, task_id=list_hdfs_results, run_id=scheduled__2026-04-06T01:00:00+00:00, execution_date=20260406T010000, start_date=20260407T010115, end_date=20260407T010121
+[2026-04-07T01:01:21.470+0000] {local_task_job_runner.py:240} INFO - Task exited with return code 0
+[2026-04-07T01:01:21.478+0000] {taskinstance.py:3498} INFO - 1 downstream tasks scheduled from follow-on schedule check
+[2026-04-07T01:01:21.490+0000] {local_task_job_runner.py:222} INFO - ::endgroup::

@@ -1,0 +1,21 @@
+[2026-04-06T23:59:59.902+0000] {local_task_job_runner.py:120} INFO - ::group::Pre task execution logs
+[2026-04-06T23:59:59.936+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: project_spark_hdfs_pipeline.clean_workspace manual__2026-04-06T23:59:56+00:00 [queued]>
+[2026-04-06T23:59:59.944+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: project_spark_hdfs_pipeline.clean_workspace manual__2026-04-06T23:59:56+00:00 [queued]>
+[2026-04-06T23:59:59.944+0000] {taskinstance.py:2306} INFO - Starting attempt 1 of 1
+[2026-04-06T23:59:59.971+0000] {taskinstance.py:2330} INFO - Executing <Task(BashOperator): clean_workspace> on 2026-04-06 23:59:56+00:00
+[2026-04-06T23:59:59.979+0000] {standard_task_runner.py:63} INFO - Started process 1312 to run task
+[2026-04-06T23:59:59.981+0000] {standard_task_runner.py:90} INFO - Running: ['airflow', 'tasks', 'run', 'project_spark_hdfs_pipeline', 'clean_workspace', 'manual__2026-04-06T23:59:56+00:00', '--job-id', '8', '--raw', '--subdir', 'DAGS_FOLDER/project_spark_hdfs_pipeline.py', '--cfg-path', '/tmp/tmplzrtw205']
+[2026-04-06T23:59:59.983+0000] {standard_task_runner.py:91} INFO - Job 8: Subtask clean_workspace
+[2026-04-07T00:00:00.014+0000] {task_command.py:426} INFO - Running <TaskInstance: project_spark_hdfs_pipeline.clean_workspace manual__2026-04-06T23:59:56+00:00 [running]> on host 1d39bff5e3d1
+[2026-04-07T00:00:00.083+0000] {taskinstance.py:2648} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='airflow' AIRFLOW_CTX_DAG_ID='project_spark_hdfs_pipeline' AIRFLOW_CTX_TASK_ID='clean_workspace' AIRFLOW_CTX_EXECUTION_DATE='2026-04-06T23:59:56+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2026-04-06T23:59:56+00:00'
+[2026-04-07T00:00:00.083+0000] {taskinstance.py:430} INFO - ::endgroup::
+[2026-04-07T00:00:00.100+0000] {subprocess.py:63} INFO - Tmp dir root location: /tmp
+[2026-04-07T00:00:00.101+0000] {subprocess.py:75} INFO - Running command: ['/usr/bin/bash', '-c', "/bin/bash -lc '/opt/project/scripts/clean-hdfs-workspace.sh'"]
+[2026-04-07T00:00:00.110+0000] {subprocess.py:86} INFO - Output:
+[2026-04-07T00:00:01.473+0000] {subprocess.py:93} INFO - Deleted /project-spark/raw/input
+[2026-04-07T00:00:05.123+0000] {subprocess.py:97} INFO - Command exited with return code 0
+[2026-04-07T00:00:05.123+0000] {taskinstance.py:441} INFO - ::group::Post task execution logs
+[2026-04-07T00:00:05.140+0000] {taskinstance.py:1206} INFO - Marking task as SUCCESS. dag_id=project_spark_hdfs_pipeline, task_id=clean_workspace, run_id=manual__2026-04-06T23:59:56+00:00, execution_date=20260406T235956, start_date=20260406T235959, end_date=20260407T000005
+[2026-04-07T00:00:05.161+0000] {local_task_job_runner.py:240} INFO - Task exited with return code 0
+[2026-04-07T00:00:05.176+0000] {taskinstance.py:3498} INFO - 1 downstream tasks scheduled from follow-on schedule check
+[2026-04-07T00:00:05.183+0000] {local_task_job_runner.py:222} INFO - ::endgroup::
